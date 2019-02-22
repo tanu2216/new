@@ -20,11 +20,9 @@ public class AccountServiceImpl implements AccountService {
 //	This method is used to get the account details of the given mobile number
 	@Override
 	public Account getAccountDetails(String mobileNo) throws MobileRechargeException {
-		// TODO Auto-generated method stub
-		if(!validateMobNo(mobileNo))
-			throw new MobileRechargeException("Invalid Mobile Number");
-		else
-			return dao.getAccountDetails(mobileNo);
+		
+		return dao.getAccountDetails(mobileNo);
+		
 	}
 
 //	This method is used to recharge the account of the given mobile number
@@ -35,7 +33,7 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 //	method to validate the mobile number using pattern class
-	@Override
+	
 	public boolean validateMobNo(String mobNo) {
 		// TODO Auto-generated method stub
 		Pattern pat = Pattern.compile("[6-9][0-9]{9}");
@@ -44,12 +42,10 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	//Method to validate the amount
-	@Override
 	public boolean validateAmount(double reAmt) {
 		// TODO Auto-generated method stub
 		Pattern pat = Pattern.compile("[1-9][0-9.]{0,15}");
 		Matcher mat = pat.matcher(String.valueOf(reAmt));
 		return mat.matches();
 	}
-
 }

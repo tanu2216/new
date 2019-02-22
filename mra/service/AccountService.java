@@ -7,7 +7,6 @@ public interface AccountService {
 	
 	public Account getAccountDetails(String mobileNo) throws MobileRechargeException;
 	public double rechargeAccount(String mobileNo, double rechargeAmount) throws MobileRechargeException;
-	public boolean validateMobNo(String mobNo);
-	public boolean validateAmount(double reAmt);
+
 	
 }

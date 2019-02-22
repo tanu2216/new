@@ -29,5 +29,14 @@ public class TestClass {
 		
 		
 	}
+	@Test (expected = MobileRechargeException.class)
+	public void TestOnAccountDetailsMethodV3() throws MobileRechargeException{
+		as.getAccountDetails("12345");
+		as.getAccountDetails("123564");
+		as.getAccountDetails("14725836952");
+		as.getAccountDetails("afsfAAF#%#");
+		as.getAccountDetails("nitu");
+		
 
+}
 }
